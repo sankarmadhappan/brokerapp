@@ -4,8 +4,6 @@ build:
     - internal/docker-build:
       dockerfile: Dockerfile
       image-name: nodedscd
-push-to-releases: 
-  steps:
     - internal/docker-push:
       image-name: nodedscd
       username: wolf359/oracleidentitycloudservice/Sankar.Madhappan@oracle.com # Registry username
