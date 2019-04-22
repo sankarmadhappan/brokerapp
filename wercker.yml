@@ -10,3 +10,39 @@ build:
       password: gm;IhnAJ5I0n-5c)cjR8 # Registry password
       repository: fra.ocir.io/wolf359/aldermore/nodedscd
       tag: v1.0
+deploy-to-cluster:
+  box:
+    id: alpine
+    cmd: /bin/sh
+  steps:
+    - kubectl:
+        name: connection testing
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: get nodes
+
+    - kubectl:
+        name: delete objects
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: delete -f $WERCKER_ROOT/deployment.yaml
+
+    - script:
+       name: wait to delete resources
+       code: sleep 20
+
+    - kubectl:
+        name: create objects
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: create -f $WERCKER_ROOT/kubernetes/deployment.yaml
+
+    - kubectl:
+        name: get LoadBalancer public IP address
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: get service -o jsonpath='{.items[*].status.loadBalancer.ingress[*].ip}'
