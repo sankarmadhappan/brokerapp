@@ -1,0 +1,15 @@
+build:
+	steps:
+		- internal/docker-build:
+			dockerfile: Dockerfile
+			image-name: nodedscd
+
+push-to-releases:
+	steps:
+		- internal/docker-push:
+			image-name: nodedscd
+			username: wolf359/oracleidentitycloudservice/Sankar.Madhappan@oracle.com # Registry username
+			password: gm;IhnAJ5I0n-5c)cjR8 # Registry password
+			repository: fra.ocir.io/wolf359/aldermore/nodedscd
+			tag: v1.0
+		
