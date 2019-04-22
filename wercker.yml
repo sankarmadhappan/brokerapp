@@ -1,6 +1,6 @@
 box: node:6.10	
 build:
-	steps:
+  steps:
     - internal/docker-build:
       dockerfile: Dockerfile
 			image-name: nodedscd	
