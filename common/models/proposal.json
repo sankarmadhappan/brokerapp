@@ -1,0 +1,68 @@
+{
+  "name": "Proposal",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "prop_ref_id": {
+      "type": "string",
+	  "id": true,
+      "required": true
+    },
+    "prop_cre_dt": {
+      "type": "date"
+    },
+    "prop_cmpl_dt": {
+      "type": "date"
+    },
+    "subj_type_cd": {
+      "type": "string",
+      "required": true
+    },
+    "nme_cd": {
+      "type": "string",
+      "required": true
+    },
+    "nme_full_text": {
+      "type": "string"
+    },
+    "ttl_pfx": {
+      "type": "string",
+      "required": true
+    },
+    "indv_fore_nme": {
+      "type": "string",
+      "required": true
+    },
+    "indv_last_nme": {
+      "type": "string",
+      "required": true
+    },
+    "regn_nbr": {
+      "type": "string",
+      "required": true
+    },
+    "std_inds_code": {
+      "type": "number",
+      "required": true
+    },
+    "inds_code_type_cd": {
+      "type": "string",
+      "required": true
+    },
+    "pmt_freq": {
+      "type": "string",
+      "required": true
+    },
+    "prd_dys_cd": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,12 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "myoracledb": {
+    "tns": "demo2",
+    "password": "Oradoc_db1",
+    "username": "SYSTEM",
+    "connector": "oracle"
+  }
+}
