@@ -1,6 +1,0 @@
-box: alpine	
-build:
-  steps:
-    - internal/docker-build:
-      dockerfile: Dockerfile
-			image-name: nodedscd	
