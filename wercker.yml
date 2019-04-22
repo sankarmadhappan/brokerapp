@@ -4,7 +4,7 @@ build:
     - internal/docker-build:
       dockerfile: Dockerfile
       image-name: nodedscd
-push-to-releases:
+push-to-releases: 
   steps:
     - internal/docker-push:
       image-name: nodedscd
