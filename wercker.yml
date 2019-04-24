@@ -6,9 +6,9 @@ build:
       image-name: nodedscd
     - internal/docker-push:
       image-name: nodedscd
-      username: wolf359/oracleidentitycloudservice/Sankar.Madhappan@oracle.com # Registry username
-      password: gm;IhnAJ5I0n-5c)cjR8 # Registry password
-      repository: fra.ocir.io/wolf359/aldermore/nodedscd
+      username: $REGISTERY_USERNAME # Registry username
+      password: $REGISTERY_PASSWORD # Registry password
+      repository: $REGISTERY_REPO
       tag: v1.0
 deploy-to-cluster:
   box:
